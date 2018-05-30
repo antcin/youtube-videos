@@ -2,6 +2,8 @@ import React, { Component } from 'react'; //used to create react components
 import ReactDOM from 'react-dom'; //used to interact with DOM
 import YTSearch from 'youtube-api-search';
 import SearchBar from './components/SearchBar';
+import VideoList from './components/VideoList';
+
 const API_KEY = 'AIzaSyAI9gv4_HoVdJ293SsHdZ3R7ouGRBfuGTI';
 
 // Create new component. this component should produce some HTML
@@ -12,7 +14,8 @@ class App extends Component {
     this.state = { videos: [] };
 
     YTSearch({key: API_KEY, term: 'surfboards'}, (videos) => {
-      this.setState({ videos });
+      this.setState({ videos }); //synctatic sugar that works when key and property have same name
+      // this.setState({ videos : videos })
     });
   }
 
@@ -20,6 +23,7 @@ class App extends Component {
     return (
       <div>
         <SearchBar />
+        <VideoList />
       </div>
     );
   }
