@@ -23,3 +23,5 @@ class SearchBar extends Component {
 }
 
 export default SearchBar;
+
+//SearchBar makes use of state by updating the user input whenever the state changes. Whenever the user enters some text we first update the state, which causes the entire component to re-render. We made the input element a controlled component by telling it to receive its value from state.
