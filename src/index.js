@@ -1,3 +1,4 @@
+import _ from 'lodash';
 import React, { Component } from 'react'; //used to create react components
 import ReactDOM from 'react-dom'; //used to interact with DOM
 import YTSearch from 'youtube-api-search';
@@ -31,9 +32,11 @@ class App extends Component {
   }
 
   render() {
+    const videoSearch = _.debounce((term) => { this.videoSearch(term) }, 300) //fat arrow function passed to debounce. Debounce returns a new function that can only be called once every 300 ms. by passing it in onSearchTermChange, it's only going to be run in 300 ms
+
     return (
       <div>
-        <SearchBar onSearchTermChange={term => this.videoSearch(term)}/>
+        <SearchBar onSearchTermChange={videoSearch}/>
         <VideoDetail video={this.state.selectedVideo}/>
         <VideoList
           onVideoSelect={selectedVideo => this.setState({selectedVideo})}
