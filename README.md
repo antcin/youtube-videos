@@ -1,4 +1,4 @@
-A simple Weather Forecast app, where the user can enter the name of a place in Great Britain and see the weather forecast over the next five days. The app shows the average temperature (in Kelvin), pressure (in hectopascals) and humidity percentage.
+A simple app that allows user to search Youtube videos.
 
 This app was developed following Udemy's [Modern React with Redux](https://www.udemy.com/react-redux/learn/v4/t/lecture/6994532?start=0) tutorial, with the aim of improving my understanding of React and Redux.
 
